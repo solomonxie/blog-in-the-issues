@@ -13,8 +13,53 @@
 
 #第一步 代码引入
 
-{% codeblock [lang:language] [title] [url] [link text] [start:#] [mark:#,#-#] [linenos:false] %}
+-------------------------------------
 
-	code snippet
+```
+public class OOM_Demo {
 
-{% endcodeblock %}
+	public static void main(String[] args) {
+		
+		final int length = 100 * 1024 * 1024;
+		
+		try{
+			byte[] b = new byte[length];
+			for(int i=0;i<length;i++){
+				b[i] = (byte) i;
+		    }
+			
+			String s = new String(b);
+			System.out.println(s);
+				
+		}catch(OutOfMemoryError e){
+			e.printStackTrace();
+			// System.out.println("OutOfMemoryError");
+		}
+	}
+}
+```
+
+# 第二步 脚注
+
+-------------------------------
+
+>1848年革命时期，大仲马身着戎装，带兵进攻巴黎。每当清晨来临之际，他把自己编辑印刷的报纸分发给市民们，宣传自己的共和思想。拿破仑三世发动政变后，大仲马持反对态度，只好流亡到比利时的布鲁塞尔。1860年，他前往意大利参加加里波第对那不勒斯王国的征战。
+
+这儿是脚注所需要的文本。[^3]
+><b>这里是加粗的文本</b>
+><font size="6" color="pink">这里是字体随意变幻的文本</font>
+
+![ImageTest](https://www.baidu.com/img/baidu_jgylogo3.gif?v=40661608.gif)
+
+## 这里是层层嵌套大刷屏
+>一直在为找不到合适顺手的笔记软件苦恼，用Word吧，不是跨平台的，虽然linux的open office和wps也可以打开看，但是格式与字体经常发生细微的改变；用LATEX吧，像是高射炮打蚊子，和Word一样，LATEX也是重量级软件，光是安装配置好，就已经够麻烦了，想看到排版效果还要自己make，更何况还有繁琐的语法和更繁琐的各种包啊库的，想想就觉得累呀。而其他一些专门的笔记软件，比如我以前用过的keepnote，rednotebook等，虽说也是轻量级跨平台的，也可以输出成html和pdf等格式，可是格式需要用鼠标手工调整，这样效率就低了。
+>最近发现markdown是个好东西，语法简洁，功能也够用，输出成网页格式非常方便，特别适合记笔记。markdown的语法规则一个小时之内就可以学会，可是找到一款出色的markdown编辑器却费了一番功夫。下面我对自己试过的markdown编辑器做一个比较：
+>一直在为找不到合适顺手的笔记软件苦恼，用Word吧，不是跨平台的，虽然linux的open office和wps也可以打开看，但是格式与字体经常发生细微的改变；用LATEX吧，像是高射炮打蚊子，和Word一样，LATEX也是重量级软件，光是安装配置好，就已经够麻烦了，想看到排版效果还要自己make，更何况还有繁琐的语法和更繁琐的各种包啊库的，想想就觉得累呀。而其他一些专门的笔记软件，比如我以前用过的keepnote，rednotebook等，虽说也是轻量级跨平台的，也可以输出成html和pdf等格式，可是格式需要用鼠标手工调整，这样效率就低了。
+>最近发现markdown是个好东西，语法简洁，功能也够用，输出成网页格式非常方便，特别适合记笔记。markdown的语法规则一个小时之内就可以学会，可是找到一款出色的markdown编辑器却费了一番功夫。下面我对自己试过的markdown编辑器做一个比较：
+>>一直在为找不到合适顺手的笔记软件苦恼，用Word吧，不是跨平台的，虽然linux的open office和wps也可以打开看，但是格式与字体经常发生细微的改变；用LATEX吧，像是高射炮打蚊子，和Word一样，LATEX也是重量级软件，光是安装配置好，就已经够麻烦了，想看到排版效果还要自己make，更何况还有繁琐的语法和更繁琐的各种包啊库的，想想就觉得累呀。而其他一些专门的笔记软件，比如我以前用过的keepnote，rednotebook等，虽说也是轻量级跨平台的，也可以输出成html和pdf等格式，可是格式需要用鼠标手工调整，这样效率就低了。
+>最近发现markdown是个好东西，语法简洁，功能也够用，输出成网页格式非常方便，特别适合记笔记。markdown的语法规则一个小时之内就可以学会，可是找到一款出色的markdown编辑器却费了一番功夫。下面我对自己试过的markdown编辑器做一个比较：
+>>>一直在为找不到合适顺手的笔记软件苦恼，用Word吧，不是跨平台的，虽然linux的open office和wps也可以打开看，但是格式与字体经常发生细微的改变；用LATEX吧，像是高射炮打蚊子，和Word一样，LATEX也是重量级软件，光是安装配置好，就已经够麻烦了，想看到排版效果还要自己make，更何况还有繁琐的语法和更繁琐的各种包啊库的，想想就觉得累呀。而其他一些专门的笔记软件，比如我以前用过的keepnote，rednotebook等，虽说也是轻量级跨平台的，也可以输出成html和pdf等格式，可是格式需要用鼠标手工调整，这样效率就低了。
+>最近发现markdown是个好东西，语法简洁，功能也够用，输出成网页格式非常方便，特别适合记笔记。markdown的语法规则一个小时之内就可以学会，可是找到一款出色的markdown编辑器却费了一番功夫。下面我对自己试过的markdown编辑器做一个比较：
+
+
+[^3]: 这里是脚注。序号和你[abc]无关，它会自动排序的，[abc]里面的只是链接，随便写。
