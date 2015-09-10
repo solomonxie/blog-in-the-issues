@@ -47,7 +47,9 @@ Eclipse 非常强大，据说复杂工程用它来开发都ok了。我只是想�
 
 ## for…in range() 循环
 典型的此循环语句是这样：  
-` for i in range(x,y,z) `  
+```python 
+for i in range(x,y,z) 
+```  
 主要新鲜的是`range(start, stop, step)`函数，它返回的是一个数列，其中：  
 start是起始数值（包括），stop是结束数值（不包括），step是递进大小
 如` range(5,-1,-1) `返回的数列是`[5,4,3,2,1,0]`  
