@@ -11,12 +11,12 @@
 # Win7（64位）下安装python2.7
 1. 先上官网下载windows64位安装版  
 众多版本中选择：Windows x86-64 MSI installer  
-![Image]()
+![image](./media/Python-Diary.md/image1.png)  
 2. 默认安装，选择组建时，将最后一项：add python.exe to   Path选中，自动将python目录添加到环境变量中。  
 3. 再下一步安装，完成。  
 测试是否安装成功  
 打开cmd命令行窗口，输入python，回车。如下：  
-![Image]()  
+![image](./media/Python-Diary.md/image2.png)  
 成功安装，然后按ctrl+z，回车。退出python的shell模式。  
 
 # 安装IDE编程工具
@@ -70,8 +70,8 @@ start是起始数值（包括），stop是结束数值（不包括），step是�
 
 ## 冒泡排序算法
 比传统遍历好多了，也算基础中的基础，我好像好多年前学过不过竟然忘了。。。
-在python中代码是这样的：
-![Image]()  
+在python中代码是这样的：  
+![image](./media/Python-Diary.md/image3.png)  
 原理很简单，从第1个数开始，对比相邻的2个数，然后数大的排在数小的后面（也就是两者交换位置）；一直到最后一个数位置，这样最大的数就沉淀到最后了；再从头开始比较，只是这次就不需要比较最后一个数了；然后再下一轮比较，再排除最后…   
 放到python语言中实现，利用2个循环嵌套：外循环控制对比的范围，逐渐缩小范围（-1），内循环才是在范围内逐个进行相邻数比较。  
 

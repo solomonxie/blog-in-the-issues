@@ -25,8 +25,9 @@ Windows和Ubuntu双系统安装有三四种方法。
 -	利用easyBCD软件进行引导安装  
 1.	下载easyBCD软件，安装。  
 2.	打开后按照http://www.linuxidc.com/Linux/2014-04/100369.htm 进行操作。  
+![image](./media/Linux-Diary.md/image1.png)  
 然后就会出现一个menu.lst文件  
-   
+![image](./media/Linux-Diary.md/image3.png)  
 我们要编辑这个文件 因为系统就是这个文件找到我们的Ubuntu的。  
 把下面的 英文 复制进去，把原来的全覆盖掉  
 ```
@@ -41,42 +42,46 @@ initrd (hd0,0)/initrd.lz
 3.	保存文件，关闭。  
   
 把ubuntu镜像文件随便找个地方解压缩，把文件夹中的.disk文件夹和casper文件夹中的`initrd.lz`和`vmlinuz`文件复制到D盘根目录，把ubuntu镜像文件也放在D盘根目录，一共4个。  
-  
+![image](./media/Linux-Diary.md/image4.png)  
+
 重启 你就会看到有2个 启动菜单给你选择（win7和neogrub） 我们选择 NeoGrub 引导加载器 这个选项。  
-   
+![image](./media/Linux-Diary.md/image5.png)  
 然后稍等待一段时间 就会见到我们想要安装的 Ubuntu了。  
-   
+![image](./media/Linux-Diary.md/image6.png)  
 进入ubuntu的待装系统后，按`Ctrl+Alt+T `打开终端，输入代码:`sudo umount -l /isodevice`这一命令取消掉对光盘所在 驱动器的挂载（注意，这里的-l是L的小写，-l 与 /isodevice 有一个空格。），否则分区界面找不到分区。  
-   
+![image](./media/Linux-Diary.md/image7.png)  
 点击桌面上ubuntu开始安装  
   
 下面就点击 安装Ubuntu 14.04开始安装，选语言不用说，  
-    
-   
-   
-   
+![image](./media/Linux-Diary.md/image8.png)  
+![image](./media/Linux-Diary.md/image9.png)  
+![image](./media/Linux-Diary.md/image10.png)  
+![image](./media/Linux-Diary.md/image11.png)  
 选安装类型，我们用其他选项。 我也不卸载原来安装的Ubuntu 13.10了，等下覆盖安装。  
-   
+![image](./media/Linux-Diary.md/image12.png)  
 因为是第一次安装，这一步必须选“其他选项”，因为要在这里进行ubuntu内部的磁盘分区。  
-  
+
 ## Ubuntu分区  
 网上有很多种分区方案，先了解了下linux各分区的作用。  
 大概就是：/home代表存储个人文件的地方，类似D盘，以后刷系统也不会把这个地方删掉，我设定到最大，80G；swap代表虚拟内存，一般跟物理内存一样就行，我设置了4G；挂载点/的是存系统用的，我设置了20G。  
 具体什么概念，再查一下吧，不太懂。  
-    
-  
+![image](./media/Linux-Diary.md/image13.png)  
+![image](./media/Linux-Diary.md/image14.png)  
 之后就一直下一步，默认操作，很简单完成安装。  
 更改语言为英语  
 因为学习需要，安装虽然默认中文，但是装好了后改为英文。  
 1.	打开系统设置，里面有个“语言支持”。  
+![image](./media/Linux-Diary.md/image15.png)  
+![image](./media/Linux-Diary.md/image16.png)  
 2.	添加或删除语言。因为我是从中文转英文，所以直接把英文选项拖拽到最上方就行了。  
 3.	地区格式栏，可以保留中文，因为货币、日期之类的。然后应用到整个系统就行了。  
   
 ## 安装视频用的VLC和Chrome  
 打开ubuntu应用中心，搜索下载VLC和chromium，安装就行了。  
-   
+![image](./media/Linux-Diary.md/image17.png)  
 然后更改默认视频播放器和默认浏览器，都在系统设置里：  
-   
+![image](./media/Linux-Diary.md/image18.png)  
+![image](./media/Linux-Diary.md/image19.png)  
 设置成功。  
   
 # 第二日 安装中文输入法及WPS Office  
@@ -123,17 +128,20 @@ http://sixipiaoyang.blog.163.com/blog/static/623235882014450916276/
 2.	关键一步（之前在text-entry settings找不到就是因为这步）  
 -	打开语言支持，然后将汉语拖拽到第一位（我的系统默认是英文，如果不做这一步，那么就找不到新装的输入法。）  
 -	点击apply system-wide应用到全局  
-   
+![image](./media/Linux-Diary.md/image20.png)  
 3.	打开text entry settings设定，按+号添加语言，搜索google，添加googlepinyin。  
 4.	点击右上角任务栏的语言栏，选择googlepinyin。  
 5.	回到text entry settings，点-号删除sunpinyin。关闭窗口。  
+![image](./media/Linux-Diary.md/image21.png)  
 6.	回到语言支持，把第一位语言改回英文，并应用，关闭。大功告成！  
-  
+![image](./media/Linux-Diary.md/image22.png)  
 ## 中文输入法的细节设定  
 有个地方很烦，就是每次要输入东西时候，旁边老出现输入法的面板。  
 解决步骤如下：  
 1.	打开computer文件夹，进入`computer/usr/share/applications`文件夹，打开`Keyboard Input Method`，这是专门设置ibus输入法的（googlepinyin是ibus的一个扩展）中文叫 键盘输入法，打开。  
+![image](./media/Linux-Diary.md/image23.png)  
 2.	将`show property panel`面板显示设定为do not show，完事。  
+![image](./media/Linux-Diary.md/image24.png)  
    
   
 ## 安装电子词典  
@@ -158,8 +166,9 @@ http://abloz.com/huzheng/stardict-dic/zh_CN/
 1.	应用中心搜索wine  
 2.	选中wine windows 程序加载器，点击more  
 3.	全选附加项  
+![image](./media/Linux-Diary.md/image25.png)  
 4.	点击安装  
-  
+
 ## 解决Wine中文乱码问题  
 安装QQ过程中，遇到乱码，所以解决这个问题。  
 参考的文章这个最靠谱：  
@@ -295,18 +304,18 @@ VT might be disabled if it has been disabled in the BIOS settings or the host ha
 (3) Power-cycle the host if you have not done so since installing VMware Workstation.   
 (4) Update the host's BIOS to the latest version.   
 For more detailed information, see http://vmware.com/info?id=152. Continue without 64-bit support?   
-  ```  
+```  
 开始找解决方案，  
 这段提示的关键就是“VT”， VT就是“Virtualization Technology（虚拟化）。 要在VM安装64位操作系统问题，必要满足以下三个条件，缺一不可：   
 - 第一，	CPU要为64位。  
 - 第二，	CPU要支持VT技术。   
 - 第三，	主板Bios设置要打开VT。  
 前两项可以用securable来检测。百度搜索，下载securable.exe，是绿色版的。打开后显示这个结果：  
-   
+![image](./media/Linux-Diary.md/image26.png)  
 说明满足要求。  
 “YES Hardware virtualization”,是指该CPU支持硬件虚拟化，如果此项显示为“YES”的话，说明你的CPU支持VT技术，如果还不能在VM中安装64位系统的话，就说明BIOS中此CPU VT功能没有开启。（有的securable版本会显示“Locked ON、Locked Off”,意思类似。）   
 这时就需要在“主板Bios当中要打开VT”功能。进入BIOS后，选择Security选项，然后选择Virtualization选项，进去后把Inter(R) Virtualization Technology选项设置为Enable后，退出重启电脑。  
-   
+![image](./media/Linux-Diary.md/image27.png)  
   
 BIOS设置完毕重启后，打开虚拟机还是不成功。再次重启进入BIOS设置保存重启后，就成功了（和网上的一样）。  
 然后开始在虚拟机中进行CentOS的安装过程。  
