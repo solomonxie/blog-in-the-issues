@@ -151,20 +151,32 @@ import urllib2,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a309809
 不过两个页面来回跳也麻烦，于是有了双屏方案：  
 `alt+shift+2`，如果屏幕够大，可以`alt+shift+3`或4/5/6，随便了。
 
-### 卸载插件
+### 卸载插件  
 调用·package control· ，输入package control: remove package，   弹出菜单后，输入要删的插件，回车，等待，完成。  
 
-# 第四日 连接数据库
-## 使用DAO对象访问数据库
-因为想用最简单的方式先连一下数据库试试，所以数据库用的Access，连接方式用的不需要配置ODBC、只需要输入数据库文件地址的方式DAO（Data Access Object）。    
-## win32com.client模块出错  
-第一句：import win32com.client就出错了，说找不到。于是上网下载相应python版本的win32扩展。地址是：http://sourceforge.net/projects/pywin32/files/pywin32/   
-进去以后选择最新的文件夹，然后选择·pywin32-219.win-amd64-py2.7·下载。因为我的python版本是2.7，然后我是64位的，所以选这个。虽然不知道amd和我有什么关系吧。但是安装成功了，直接运行程序，问题解决。
+# 第四日 操作文件  
 
+## 用base64对图片编码/解码  
+目的是要将一个图片进行编码，将得到的base64字符串保存进一个txt文件，然后再从txt文件中读取字符串再生成图片。
+如果要在python中对图片进行base64编码，再进行解码的话，必须遵循下面几条来：  
+1. 文件头要有：   
+	`# -*- coding: utf-8 -*-`  
+	否则无法执行后面的操作  
+2. encode时打开文件操作调用`open()`函数的第2个参数必须严格遵守   
+	```
+	fin = open(path_in,'rb')
+	fout = open(path_out,'w')
+	```  
+3. decode时打开文件操作调用`open()`函数的第2个参数必须严格遵守  
+	```
+	fin = open(path_in,'r')
+	fout = open(path_out,'wb')
+	```  
 
+*以上只要一条没有，程序就不成功。*  
 
-
-
+调试过程中，还在线对图片的base64码进行了对比验证。参考这个网址：  
+[图片在线Base64转换](http://tool.css-js.com/base64.html)
 
 
 
