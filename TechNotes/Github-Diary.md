@@ -1,6 +1,6 @@
 # Git 学习日记  
-
 ## 第一日 安装配置Git  
+--------------------------------------------
 ### 注册Github账号  
 打开Github.com，然后注册。  
 下载安装Git客户端 windows 64位  
@@ -22,6 +22,12 @@ git config --global user.email "solomonxie@foxmail.com"
 重启Github客户端，再登录，成功！  
 
 ### 往Github的Repository仓库添加文件    
+直接按上方仓库名旁边的小`+`号，就可以添加一个文件，  
+例如像添加一个.js文件，就在文件名输入 `xxx.js`，  
+然后默认就会高亮javascript。  
+不过如果想要客户端更新就更简单了：**直接在本地添加修改**  
+然后再到客户端里，提交更新，然后点击同步，ok了。
+
 
 ### 创建个人博客  
 Hello World  
@@ -38,7 +44,7 @@ cd username.github.io
 echo "Hello World" > index.html
 4. 然后push  
 再将本地内容push到在线托管repo中：
-```
+```git
 git add --all
 git commit -m "Initial commit"
 git push -u origin master
@@ -50,10 +56,9 @@ git push -u origin master
 参考：http://blog.csdn.net/renfufei/article/details/37725057/
 这篇文章最浅显易懂。
 
-### 利用Jekyll模板引擎维护博客  
-参考：http://www.pchou.info/web-build/2013/01/05/build-github-blog-page-02.html
 
 ## 第二日 使用SublimeText2操作md和rst  
+--------------------------------------------------------
 发现Editplus不支持交互，eclipse对配置要求太高一打开就卡，然后听说有sublime，就安装了sublime text2试试。  
 ### 添加Markdown写作支持  
 参考：http://www.jianshu.com/p/378338f10263  
@@ -87,6 +92,55 @@ Preferences -> Color Scheme -> User -> Monokai Extended
 
 
 
+# 第三日 git 指令学习
+-----------------------------------------------------------
+使用的是`Git Bash`。  
+git bash 是安装git时候自动有的。  
+
+## 准备工作
+> 点开桌面上图标之前需要设置一下快捷键：
+	1. 右键打开属性  
+	2. 把target栏最后的参数删除（其实我不知道输入什么）  
+	3. 把start in 改为存放git的目录
+	4. 确定，并打开文件，进入命令行
+
+在正式使用git前，需要对git进行一定的设定，  
+让它连接到自己的github。  
+这之间需要进行一些`ssh`和用户名密码的验证。
+
+1. 设置姓名和邮箱地址：  
+```git
+git config --global user.name "Solomon Xie"
+git config --global user.email "solomonxie@foxmail.com"
+```  
+2. 设置SSH Key
+	1. 创建SSH Key
+	` ssh-keygen -t rsa -C "solomonxie@foxmail.com" `    
+	然后会显示一个放置key的文件夹地址，需要你按`回车`确认，  
+	然后会要求设定一个密码，我是设定的相同密码，免得麻烦。
+	2. 到github网页setting中添加ssh key，按钮叫`Add SSH Key`，  
+	标题随便起一个，内容需要到刚才显示放置key的文件夹啊去找，  
+	我的是叫`C:\Users\Administrator\.ssh`，找到pub公用密钥`id_rsa.pub`  
+	3. 用记事本打开，全选复制，然后粘贴到网页中并确定。  
+
+## 仓库的基本操作
+### clone网上的仓库
+前提是本地没有这个仓库，才能克隆，如果有的话就不行了。 
+然后看清楚自己bash当前的位置，是不是自己想要存放仓库的位置。  
+如果是的话就好办了，上网页中复制仓库的HTTPS clone URL，在左侧栏，很好找。  
+复制后可以开始输入指令了：  
+`git clone https://github.com/solomonxie/test.git`  
+
+### 更新github仓库的内容
+说白了就是上传新文件。
+假设我现在在本地仓库中改东西了，还复制了几张图片进来，还加了新文件，  
+各种操作，然后我想和网上同步，那么需要3步：
+1. `git status` 输入这个后，就会看到是否有更新，有哪些文件更新。  
+2. `git add TechNotes/hello.md` 将需要更新的文件添加到缓存中，可以连续输入好几个。  
+3. `git push` 这是最后一步，将上面`git add`缓存的文件全部更新到网上github中。  
+
+> 对了，git 指令不区分大小写！很方便！  
+> 还有，git 输入文件名太长的时候，可以按`Tab`键自动补全  
 
 
 
