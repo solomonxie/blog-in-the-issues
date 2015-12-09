@@ -11,4 +11,4 @@ It'll be a great move for my improvement of skills.
 # Update
 Acutally, I've changed my blog to Github - Issues. It seems to be a more popular and comfortable blog-space, ranther than this Github - Pages. 
 Anyway, for visiting my blog, please enter my issues within the same repository, or click the url below:  
-## [Solomon Xie Issues](https://github.com/solomonxie/solomonxie.github.io/issues)
+### [Issues - Solomon Xie](https://github.com/solomonxie/solomonxie.github.io/issues)
