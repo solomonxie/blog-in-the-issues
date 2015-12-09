@@ -8,10 +8,7 @@ This is my first time to write an article with Markdown.
 With this blog, hope I can continuely do writing or make notes here.   
 It'll be a great move for my improvement of skills.  
 
-
-The list blow roughly descript the structure of this Git-Blog:  
-
-- Christ  
-- Technology
-- Ideas
-- Diary
+# Update
+Acutally, I've changed my blog to Github - Issues. It seems to be a more popular and comfortable blog-space, ranther than this Github - Pages. 
+Anyway, for visiting my blog, please enter my issues within the same repository, or click the url below:  
+## [Solomon Xie Issues](https://github.com/solomonxie/solomonxie.github.io/issues)
