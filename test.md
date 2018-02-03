@@ -28,6 +28,7 @@ Two-dimension, here it simply just means there’re two distance number in the l
 
 And the number(multiplier) put in front of the vector(position), we call it SCALARS. Literally means how much we scale the vector(scale the movement from origin to the position, closer or further, forward or backward). The scalar we also just call it number sometimes.
 
+
 #### Two Fundamental operation of vectors: VECTOR ADDITION & SCALAR MULPIPLICATION.
 ![image](https://user-images.githubusercontent.com/14041622/35763040-024337a8-08de-11e8-8b24-d5f33a7e49d0.png)
 
