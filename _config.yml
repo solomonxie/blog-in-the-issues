@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 
 port: 4000
@@ -36,3 +37,6 @@ colors:
 kramdown:
   auto_ids:  false
 
+=======
+theme: jekyll-theme-merlot
+>>>>>>> 310f89253f826046a6cbba5e745697203c5a24dc
