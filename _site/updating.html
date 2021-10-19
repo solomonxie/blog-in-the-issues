@@ -1,0 +1,24 @@
+<h2>Updating</h2>
+
+<p>So you’ve got a copy running and there’s some new update? Let’s update!</p>
+
+<ol>
+  <li>Checkout your github-pages branch
+    <ul>
+      <li><code class="highlighter-rouge">git checkout gh-pages</code> for a standalone or existing page</li>
+      <li><code class="highlighter-rouge">git checkout master</code> for a <em>username.github.io</em> page</li>
+    </ul>
+  </li>
+  <li>run <code class="highlighter-rouge">git remote | grep -q "singlepage" || git remote add -t publish singlepage https://github.com/t413/SinglePaged.git</code> to be sure you have access to this repository (you can run this command at any time).</li>
+  <li><code class="highlighter-rouge">git fetch singlepage</code> to fetch-in-place new changes.</li>
+  <li>Update to the new base (using merge)
+    <ol>
+      <li><code class="highlighter-rouge">git merge singlepage/publish</code></li>
+    </ol>
+  </li>
+  <li>You can alternatively update using rebase. This <em>rewrites history</em> (<strong>bad</strong>), but it is cleaner.
+    <ol>
+      <li><code class="highlighter-rouge">git rebase singlepage/publish</code></li>
+    </ol>
+  </li>
+</ol>
